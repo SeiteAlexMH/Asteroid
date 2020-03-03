@@ -148,7 +148,7 @@ void RunGame(){
     if(!invincible){
       for(int i= asteroidList.size()-1; i>-1;i--){
         asteroidList.get(i).hitscan();
-        if(player1.shot && !playerCrashed){
+        if(player1.shot){
           savedIndex = i;
           playerCrashed = true; 
           invincible = true;
@@ -156,6 +156,7 @@ void RunGame(){
           flipCount += 10;
           player1.XVelocity =0;
           player1.YVelocity =0;
+          break;
         }
       }
     }
